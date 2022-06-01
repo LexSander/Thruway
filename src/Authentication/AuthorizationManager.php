@@ -146,7 +146,7 @@ class AuthorizationManager extends RouterModuleClient implements RealmModuleInte
      * @param $uri
      * @return bool|mixed
      */
-    private function isAuthorizedByRolesActionAndUri($rolesToCheck, $action, $uri)
+    protected function isAuthorizedByRolesActionAndUri($rolesToCheck, $action, $uri)
     {
         if (!in_array('default', $rolesToCheck, true)) {
             $rolesToCheck = array_merge(['default'], $rolesToCheck);
@@ -254,7 +254,7 @@ class AuthorizationManager extends RouterModuleClient implements RealmModuleInte
      * @param $args
      * @return \stdClass|bool
      */
-    private function getRuleFromArgs($args)
+    protected function getRuleFromArgs($args)
     {
         if (!is_array($args)) {
             return false;
